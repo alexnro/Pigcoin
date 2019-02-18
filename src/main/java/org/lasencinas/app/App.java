@@ -1,5 +1,8 @@
 package org.lasencinas.app;
 
+import org.lasencinas.genSig.GenSig;
+import org.lasencinas.wallet.Wallet;
+
 import java.security.KeyPair;
 import java.util.Map;
 
