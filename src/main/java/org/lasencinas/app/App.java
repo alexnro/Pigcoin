@@ -1,6 +1,7 @@
 package org.lasencinas.app;
 
 import org.lasencinas.genSig.GenSig;
+import org.lasencinas.transaction.Transaction;
 import org.lasencinas.wallet.Wallet;
 
 import java.security.KeyPair;
@@ -47,19 +48,19 @@ public class App {
         System.out.println("Wallet_1: \n" + wallet_1.toString());
         System.out.println("Wallet_2: \n" + wallet_2.toString());
 
-//        /**
-//         * Crea una transaccion de pigcoins
-//         * Visualiza la transaccion
-//         */
-//
-//        System.out.println("\n" + "Ver transaccion" + "\n" +
-//                "==============="        );
-//
-//        Transaction trx = new Transaction();
-//        trx = new Transaction("hash_1", "0", wallet_1.getAddress(), wallet_2.getAddress(), 20, "a flying pig!");
-//
-//        System.out.println(trx.toString());
-//
+        /**
+         * Crea una transaccion de pigcoins
+         * Visualiza la transaccion
+         */
+
+        System.out.println("\n" + "Ver transaccion" + "\n" +
+                "==============="        );
+
+        Transaction trx = new Transaction();
+        trx = new Transaction("hash_1", "0", wallet_1.getAddress(), wallet_2.getAddress(), 20, "a flying pig!");
+
+        System.out.println(trx.toString());
+
 //        /**
 //         * Crea el blockchain
 //         * y añade transacciones que crean moneda "pigcoins"
