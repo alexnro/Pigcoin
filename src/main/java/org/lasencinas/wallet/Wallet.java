@@ -16,15 +16,28 @@ public class Wallet {
     private Transaction inputTransactions = null;
     private Transaction outputTransactions = null;
 
-    public generateKeyPair() {
-        GenSig.generateKeyPair();
+    public double getTotal_input() {
+        return total_input;
+    }
+
+    public double getTotal_output() {
+        return total_output;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void generateKeyPair() {
+        setAddress(GenSig.generateKeyPair().getPublic());
+        setSK(GenSig.generateKeyPair().getPrivate());
     }
 
     public void setAddress(PublicKey address) {
         this.address = address;
     }
 
-    public void setsKey(PrivateKey sKey) {
+    public void setSK(PrivateKey sKey) {
         this.sKey = sKey;
     }
 
@@ -32,11 +45,28 @@ public class Wallet {
         return this.address;
     }
 
-    public PrivateKey getsKey() {
+    public PrivateKey getSKey() {
         return this.sKey;
     }
 
-    public void loadCoins(double bChain) {
+    public void loadCoins() {
         //TODO
+    }
+
+    public void loadInputTransactions() {
+        //TODO
+    }
+
+    public void sendCoins() {
+        //TODO
+    }
+
+    @Override
+    public String toString() {
+        String toString = "\nWallet = " + getAddress().hashCode() +
+                            "\nTotal input = " + getTotal_input() +
+                            "\nTotal output = " + getTotal_output() +
+                            "\nBalance = " + getBalance() + "\n";
+        return toString;
     }
 }
