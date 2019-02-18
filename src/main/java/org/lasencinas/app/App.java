@@ -83,7 +83,7 @@ public class App {
 //
 //        // Visualiza el blockchain
 //        bChain.summarize();
-//
+
 //        /**
 //         * Ve la transaccion de una posicion determinada del blockchain
 //         */
