@@ -6,6 +6,8 @@ import org.lasencinas.transaction.Transaction;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Wallet {
 
@@ -14,8 +16,8 @@ public class Wallet {
     private double total_input = 0;
     private double total_output = 0;
     private double balance = 0;
-    private Transaction inputTransactions = null;
-    private Transaction outputTransactions = null;
+    private List<Transaction> inputTransactions = new ArrayList<>();
+    private List<Transaction> outputTransactions = new ArrayList<>();
 
     public double getTotal_input() {
         return this.total_input;
@@ -27,6 +29,22 @@ public class Wallet {
 
     public double getBalance() {
         return this.balance;
+    }
+
+    public List<Transaction> getInputTransactions() {
+        return this.inputTransactions;
+    }
+
+    public List<Transaction> getOutputTransactions() {
+        return this.outputTransactions;
+    }
+
+    public void setInputTransactions(Transaction inputTransactions) {
+        this.inputTransactions.add(inputTransactions);
+    }
+
+    public void setOutputTransactions(Transaction outputTransactions) {
+        this.outputTransactions.add(outputTransactions);
     }
 
     public void setTotal_input(double total_input) {
@@ -71,6 +89,22 @@ public class Wallet {
             }
         }
         balance += total_input - total_output;
+    }
+
+    public void loadInputTransactions(BlockChain bChain) {
+        for (Transaction transaction : bChain.getBlockChain()) {
+            if (transaction.getpKey_recipient() == this.getAddress()) {
+                setInputTransactions(transaction);
+            }
+        }
+    }
+
+    public void loadOutputTransactions(BlockChain bChain) {
+        for (Transaction transaction : bChain.getBlockChain()) {
+            if (transaction.getpKey_sender() == this.getAddress()) {
+                setOutputTransactions(transaction);
+            }
+        }
     }
 
     @Override

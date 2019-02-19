@@ -111,32 +111,32 @@ public class App {
         wallet_2.loadCoins(bChain);
         System.out.println(wallet_2.toString());
 
-//        /**
-//         * Carga en la wallet el total de transacciones
-//         * recibidas (aquellas que significan recibir pigcoins)
-//         * y enviadas (aquellas que envian pigcoins)
-//         * y mostrarlas
-//         */
-//
-//        System.out.println("\n" + "Ver las transacciones ENTRANTES de la wallet_1" + "\n" +
-//                "=============================================="        );
-//        wallet_1.loadInputTransactions(bChain);
-//        System.out.println("Wallet = " + wallet_1.getAddress().hashCode());
-//        System.out.println("Transacciones = " + wallet_1.getInputTransactions().toString());
-//
-//        System.out.println("\n" + "Ver las transacciones ENVIADAS de la wallet_1" + "\n" +
-//                "=============================================="        );
-//        wallet_1.loadOutputTransactions(bChain);
-//        System.out.println("Wallet = " + wallet_1.getAddress().hashCode());
-//        System.out.println("Transacciones = " + wallet_1.getOutputTransactions().toString());
-//
-//        System.out.println("\n" + "Ver las transacciones entrantes de la wallet_2" + "\n" +
-//                "=============================================="        );
-//        wallet_2.loadInputTransactions(bChain);
-//        System.out.println("Wallet = " + wallet_1.getAddress().hashCode());
-//        System.out.println("Transacciones = " + wallet_2.getInputTransactions().toString());
-//
-//
+        /**
+         * Carga en la wallet el total de transacciones
+         * recibidas (aquellas que significan recibir pigcoins)
+         * y enviadas (aquellas que envian pigcoins)
+         * y mostrarlas
+         */
+
+        System.out.println("\n" + "Ver las transacciones ENTRANTES de la wallet_1" + "\n" +
+                "=============================================="        );
+        wallet_1.loadInputTransactions(bChain);
+        System.out.println("Wallet = " + wallet_1.getAddress().hashCode());
+        System.out.println("Transacciones = " + wallet_1.getInputTransactions().toString());
+
+        System.out.println("\n" + "Ver las transacciones ENVIADAS de la wallet_1" + "\n" +
+                "=============================================="        );
+        wallet_1.loadOutputTransactions(bChain);
+        System.out.println("Wallet = " + wallet_1.getAddress().hashCode());
+        System.out.println("Transacciones = " + wallet_1.getOutputTransactions().toString());
+
+        System.out.println("\n" + "Ver las transacciones entrantes de la wallet_2" + "\n" +
+                "=============================================="        );
+        wallet_2.loadInputTransactions(bChain);
+        System.out.println("Wallet = " + wallet_1.getAddress().hashCode());
+        System.out.println("Transacciones = " + wallet_2.getInputTransactions().toString());
+
+
 //        /**
 //         * Recargamos la wallet_1
 //         * y visualizamos el blockchain
