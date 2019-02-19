@@ -62,8 +62,15 @@ public class Wallet {
         return this.sKey;
     }
 
-    public void loadCoins(BlockChain blockChain) {
-        //TODO
+    public void loadCoins(BlockChain bChain) {
+        for(Transaction transaction : bChain.getBlockChain()) {
+            if(transaction.getpKey_recipient() == this.getAddress()) {
+                total_input += transaction.getPigcoins();
+            } else if(transaction.getpKey_sender() == this.getAddress()) {
+                total_output += transaction.getPigcoins();
+            }
+        }
+        balance += total_input - total_output;
     }
 
     @Override
