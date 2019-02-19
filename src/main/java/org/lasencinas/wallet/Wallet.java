@@ -66,14 +66,6 @@ public class Wallet {
         //TODO
     }
 
-    public void loadInputTransactions() {
-        //TODO
-    }
-
-    public void sendCoins() {
-        //TODO
-    }
-
     @Override
     public String toString() {
         String toString = "\nWallet = " + getAddress().hashCode() +
