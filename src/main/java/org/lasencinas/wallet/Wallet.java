@@ -1,5 +1,6 @@
 package org.lasencinas.wallet;
 
+import org.lasencinas.blockChain.BlockChain;
 import org.lasencinas.genSig.GenSig;
 import org.lasencinas.transaction.Transaction;
 
@@ -17,15 +18,27 @@ public class Wallet {
     private Transaction outputTransactions = null;
 
     public double getTotal_input() {
-        return total_input;
+        return this.total_input;
     }
 
     public double getTotal_output() {
-        return total_output;
+        return this.total_output;
     }
 
     public double getBalance() {
-        return balance;
+        return this.balance;
+    }
+
+    public void setTotal_input(double total_input) {
+        this.total_input += total_input;
+    }
+
+    public void setTotal_output(double total_output) {
+        this.total_output += total_output;
+    }
+
+    public void setBalance(double balance) {
+        this.balance += getTotal_input() - getTotal_output();
     }
 
     public void generateKeyPair() {
@@ -49,7 +62,7 @@ public class Wallet {
         return this.sKey;
     }
 
-    public void loadCoins() {
+    public void loadCoins(BlockChain blockChain) {
         //TODO
     }
 
